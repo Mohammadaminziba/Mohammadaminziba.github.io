@@ -1,40 +1,54 @@
+// Loader
 window.addEventListener("load", () => {
+    const loader = document.getElementById("loader");
+
     setTimeout(() => {
-        const loader = document.getElementById("loader");
+        if (loader) {
+            loader.style.opacity = "0";
 
-        loader.style.opacity = "0";
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 800);
+        }
+    }, 1500);
 
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 1000);
-
-    }, 2000);
+    revealSections();
 });
-alert("JavaScript OK");
+
+// Scroll Animation
 const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
-
+function revealSections() {
     sections.forEach(section => {
-
         const top = section.getBoundingClientRect().top;
-        const height = window.innerHeight;
 
-        if(top < height - 100){
+        if (top < window.innerHeight - 120) {
             section.classList.add("show");
         }
-
     });
+}
 
-});
-const cards = document.querySelectorAll(".about, .skills, .journey, .gallery");
-// ===== Theme Mode =====
+window.addEventListener("scroll", revealSections);
 
+// Theme Mode
 const themeBtn = document.getElementById("theme-btn");
 
+if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light");
 
-themeBtn.addEventListener("click",()=>{
+        const mode = document.body.classList.contains("light")
+            ? "light"
+            : "dark";
 
-    document.body.classList.toggle("light");
+        localStorage.setItem("theme", mode);
+    });
+}
 
+window.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light");
+    }
 });

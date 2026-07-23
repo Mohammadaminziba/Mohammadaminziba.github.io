@@ -1039,3 +1039,58 @@ body.light p{
     font-size:14px;
 
 }
+/* ===== Mobile Menu ===== */
+
+#menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+@media(max-width:768px){
+
+    #menu-btn{
+        display:block;
+    }
+
+
+    .navbar{
+        flex-direction:row;
+    }
+
+
+    .navbar ul{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+
+        flex-direction:column;
+        align-items:center;
+
+        background:rgba(0,0,0,.8);
+        backdrop-filter:blur(20px);
+
+        border-radius:20px;
+
+        padding:20px;
+
+        transform:translateY(-20px);
+        opacity:0;
+        pointer-events:none;
+
+        transition:.4s;
+    }
+
+
+    .navbar ul.active{
+        transform:translateY(0);
+        opacity:1;
+        pointer-events:auto;
+    }
+
+}
