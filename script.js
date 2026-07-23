@@ -52,3 +52,15 @@ window.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("light");
     }
 });
+// Mobile Menu
+
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+
+if(menuBtn){
+    menuBtn.addEventListener("click", ()=>{
+
+        navLinks.classList.toggle("active");
+
+    });
+}
