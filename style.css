@@ -146,10 +146,10 @@ letter-spacing:2px;
 
     padding:15px 30px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(238, 17, 17, 0.08);
     backdrop-filter:blur(15px);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(235, 14, 14, 0.15);
 
     border-radius:20px;
 
@@ -201,9 +201,9 @@ letter-spacing:2px;
 
     to{
         text-shadow:
-        0 0 20px #68929b,
+        0 0 20px #09b5db,
         0 0 40px #551010,
-        0 0 70px #5c8891;
+        0 0 70px #11b7d8;
     }
 }
 .telegram-btn{
@@ -284,7 +284,7 @@ letter-spacing:2px;
 .bar{
     width:100%;
     height:18px;
-    background:#222;
+    background:#707070;
     border-radius:20px;
     overflow:hidden;
 }
@@ -1107,6 +1107,29 @@ body.light p{
 
     #menu-btn{
         display:block;
+    }
+
+}
+/* Mobile Menu Button */
+
+#menu-btn{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+
+
+@media(max-width:768px){
+
+    #menu-btn{
+        display:block;
+    }
+
+    .navbar{
+        flex-direction:row;
     }
 
 }
